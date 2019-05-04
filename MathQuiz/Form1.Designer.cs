@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.timeLabel = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.plusLeftLabel = new System.Windows.Forms.Label();
             this.plusRightLabel = new System.Windows.Forms.Label();
@@ -51,20 +51,14 @@
             this.dividedRightLabel = new System.Windows.Forms.Label();
             this.dividedLeftLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dateTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quotient)).BeginInit();
             this.SuspendLayout();
-            // 
-            // timeLabel
-            // 
-            this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLabel.Location = new System.Drawing.Point(272, 9);
-            this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(200, 30);
-            this.timeLabel.TabIndex = 0;
             // 
             // label1
             // 
@@ -123,6 +117,7 @@
             this.sum.Name = "sum";
             this.sum.Size = new System.Drawing.Size(100, 35);
             this.sum.TabIndex = 6;
+            this.sum.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // difference
             // 
@@ -131,6 +126,7 @@
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(100, 35);
             this.difference.TabIndex = 11;
+            this.difference.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label2
             // 
@@ -179,6 +175,7 @@
             this.product.Name = "product";
             this.product.Size = new System.Drawing.Size(100, 35);
             this.product.TabIndex = 16;
+            this.product.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label8
             // 
@@ -227,6 +224,7 @@
             this.quotient.Name = "quotient";
             this.quotient.Size = new System.Drawing.Size(100, 35);
             this.quotient.TabIndex = 21;
+            this.quotient.Enter += new System.EventHandler(this.answer_Enter);
             // 
             // label12
             // 
@@ -280,11 +278,37 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.StartButton_Click_1);
             // 
+            // timeLabel
+            // 
+            this.timeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.timeLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(272, 9);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(200, 30);
+            this.timeLabel.TabIndex = 23;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
+            // 
+            // dateTime
+            // 
+            this.dateTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime.Location = new System.Drawing.Point(23, 322);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(200, 30);
+            this.dateTime.TabIndex = 24;
+            // 
             // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.dateTime);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.quotient);
             this.Controls.Add(this.label12);
@@ -307,7 +331,6 @@
             this.Controls.Add(this.plusRightLabel);
             this.Controls.Add(this.plusLeftLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.timeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "form1";
@@ -322,8 +345,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label plusLeftLabel;
         private System.Windows.Forms.Label plusRightLabel;
@@ -346,6 +367,9 @@
         private System.Windows.Forms.Label dividedRightLabel;
         private System.Windows.Forms.Label dividedLeftLabel;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label dateTime;
     }
 }
 
