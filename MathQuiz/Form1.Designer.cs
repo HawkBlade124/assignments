@@ -118,6 +118,7 @@
             this.sum.Size = new System.Drawing.Size(100, 35);
             this.sum.TabIndex = 6;
             this.sum.Enter += new System.EventHandler(this.answer_Enter);
+            this.sum.Leave += new System.EventHandler(this.display_sound);
             // 
             // difference
             // 
@@ -127,6 +128,7 @@
             this.difference.Size = new System.Drawing.Size(100, 35);
             this.difference.TabIndex = 11;
             this.difference.Enter += new System.EventHandler(this.answer_Enter);
+            this.difference.Leave += new System.EventHandler(this.display_sound);
             // 
             // label2
             // 
@@ -176,6 +178,7 @@
             this.product.Size = new System.Drawing.Size(100, 35);
             this.product.TabIndex = 16;
             this.product.Enter += new System.EventHandler(this.answer_Enter);
+            this.product.Leave += new System.EventHandler(this.display_sound);
             // 
             // label8
             // 
@@ -225,6 +228,7 @@
             this.quotient.Size = new System.Drawing.Size(100, 35);
             this.quotient.TabIndex = 21;
             this.quotient.Enter += new System.EventHandler(this.answer_Enter);
+            this.quotient.Leave += new System.EventHandler(this.display_sound);
             // 
             // label12
             // 
@@ -295,12 +299,12 @@
             // 
             // dateTime
             // 
-            this.dateTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTime.Location = new System.Drawing.Point(23, 322);
+            this.dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime.Location = new System.Drawing.Point(306, 322);
             this.dateTime.Name = "dateTime";
-            this.dateTime.Size = new System.Drawing.Size(200, 30);
+            this.dateTime.Size = new System.Drawing.Size(166, 30);
             this.dateTime.TabIndex = 24;
+            this.dateTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // form1
             // 
@@ -335,6 +339,7 @@
             this.MaximizeBox = false;
             this.Name = "form1";
             this.Text = "BenFuller MathQuiz";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).EndInit();

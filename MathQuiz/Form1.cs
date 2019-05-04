@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -56,7 +57,7 @@ namespace MathQuiz
 
 
             // Fill in the subtraction problem.
-            minuend = randomizer.Next(1, 101);
+            minuend = randomizer.Next(1, 51);
             subtrahend = randomizer.Next(1, minuend);
             minusLeftLabel.Text = minuend.ToString();
             minusRightLabel.Text = subtrahend.ToString();
@@ -160,5 +161,18 @@ namespace MathQuiz
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dateTime.Text = DateTime.Now.ToString("dd MMMM yyyy");
+        }
+
+        private void display_sound(object sender, EventArgs e)
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\chimes.wav");
+            if (CheckTheAnswer())
+            {               
+                simpleSound.Play();
+            }
+        }
     }
 }
